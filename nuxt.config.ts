@@ -2,24 +2,25 @@
 import { fileURLToPath, URL } from "url";
 
 export default defineNuxtConfig({
-  devtools: { enabled: true },
-  modules: [
-    '@nuxtjs/tailwindcss'
-  ],
-  vite: {
-    vue: {
-      customElement: true
+    devtools: { enabled: true },
+    modules: ["@nuxtjs/tailwindcss", "@nuxt/image"],
+    vite: {
+        vue: {
+            customElement: true,
+        },
+        resolve: {
+            alias: [
+                {
+                    find: "@images",
+                    replacement: fileURLToPath(
+                        new URL("./assets/images", import.meta.url)
+                    ),
+                },
+            ],
+        },
     },
-    resolve: {
-      alias: [
-          {
-            find: "@images",
-            replacement: fileURLToPath(
-                new URL("./assets/images", import.meta.url)
-            ),
-          }
-      ],
+    image: {
+        dir: "assets/images",
     },
-  },
-  css: ['~/assets/css/main.css']
-})
+    css: ["~/assets/css/main.css"],
+});
