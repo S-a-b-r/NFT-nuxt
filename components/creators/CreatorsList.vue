@@ -1,6 +1,6 @@
 <script setup>
 import { defineProps } from "vue";
-import CreatorItem from "@/components/CreatorItem.vue";
+import CreatorItem from "~/components/creators/CreatorItem.vue";
 
 const props = defineProps({
     creators: Array,

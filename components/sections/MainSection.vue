@@ -32,10 +32,6 @@ const creatorMainBanner = {
                 <div class="p-5">
                     <h2 class="mb-3 text-xl">Space Walking</h2>
                     <CreatorInfo :creator="creatorMainBanner" />
-                    <div class="flex">
-                        <NuxtImg width="24" height="24" src="avatars/20.png" />
-                        <span class="ml-3">Animakid</span>
-                    </div>
                 </div>
             </div>
         </div>

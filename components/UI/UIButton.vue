@@ -22,13 +22,13 @@ const btnClass = computed(() => [
         class="flex items-center rounded-[20px] px-8 py-4 font-semibold"
         :class="btnClass"
     >
-        <img
+        <NuxtImg
             v-if="props.iconName"
             class="mr-3"
-            :src="`/src/assets/images/icons/${iconName}.svg`"
+            :src="`/icons/${iconName}.svg`"
             width="20"
             height="20"
         />
-        <slot></slot>
+        <slot />
     </button>
 </template>

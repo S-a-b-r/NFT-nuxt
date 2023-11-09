@@ -17,9 +17,9 @@ const props = defineProps({
             >
                 {{ props.user.id }}
             </div>
-            <img
+            <NuxtImg
                 class="h-[3.75rem] w-[3.75rem] self-center lg:h-[7.5rem] lg:w-[7.5rem]"
-                :src="`/src/assets/images/avatars/${props.user.avatarUrl}.png`"
+                :src="`/avatars/${props.user.avatarUrl}.png`"
             />
         </div>
         <div class="flex flex-col justify-between">
