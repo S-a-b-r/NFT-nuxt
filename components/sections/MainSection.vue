@@ -1,5 +1,4 @@
 <script setup>
-import CreatorInfo from "~/components/UI/CreatorInfo.vue";
 import StatsComponent from "~/components/StatsComponent.vue";
 
 const statsItems = [
@@ -7,6 +6,7 @@ const statsItems = [
     { id: 2, count: "100k+", title: "Auctions" },
     { id: 3, count: "240k+", title: "Artists" },
 ];
+
 const creatorMainBanner = {
     name: "Animakid",
     avatarUrl: "20",
@@ -31,7 +31,7 @@ const creatorMainBanner = {
                 <NuxtImg class="w-full" src="image_first.png" placeholder />
                 <div class="p-5">
                     <h2 class="mb-3 text-xl">Space Walking</h2>
-                    <CreatorInfo :creator="creatorMainBanner" />
+                    <UICreator :creator="creatorMainBanner" />
                 </div>
             </div>
         </div>

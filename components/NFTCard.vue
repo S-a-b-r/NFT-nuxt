@@ -1,9 +1,12 @@
 <script setup>
-import { defineProps } from "vue"
+import { defineProps } from "vue";
+import { getBg } from "~/hooks/backgroundImg";
 
 const props = defineProps({
     nftInfo: Object,
-})
+});
+
+const bgStyle = getBg(`NFT/${props.nftInfo.imageUrl}.png`);
 </script>
 
 <template>
@@ -11,21 +14,13 @@ const props = defineProps({
         class="overflow-hidden rounded"
         :class="props.nftInfo.custom_class ?? ''"
     >
-        <div
-            class="h-[238px] w-full bg-cover bg-center"
-            :style="`background-image:url('src/assets/images/NFT/${props.nftInfo.imageUrl}.png')`"
-        ></div>
+        <div class="h-[238px] w-full bg-cover bg-center" :style="bgStyle"></div>
         <div class="bg-gray p-5 pb-6">
             <div class="text-xl font-semibold">
                 {{ props.nftInfo.title }}
             </div>
             <div class="mt-1 flex">
-                <img
-                    width="24"
-                    height="24"
-                    :src="`src/assets/images/avatars/${props.nftInfo.creator.avatarUrl}.png`"
-                />
-                <div class="ml-3">{{ props.nftInfo.creator.name }}</div>
+                <UICreator :creator="props.nftInfo.creator" />
             </div>
             <div class="mt-6 flex justify-between">
                 <div class="flex flex-col gap-2 text-sm">

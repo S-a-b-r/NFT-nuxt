@@ -2,7 +2,7 @@
 import { fileURLToPath, URL } from "url";
 
 export default defineNuxtConfig({
-    devtools: { enabled: true },
+    devtools: { enabled: false },
     modules: ["@nuxtjs/tailwindcss", "@nuxt/image"],
     vite: {
         vue: {

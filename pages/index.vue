@@ -3,6 +3,7 @@ import MainSection from "~/components/sections/MainSection.vue";
 import TrendingCollectionSection from "~/components/sections/TrendingCollectionSection.vue";
 import TopCreatorsSection from "~/components/sections/TopCreatorsSection.vue";
 import CategoriesSection from "~/components/sections/CategoriesSection.vue";
+import DiscoverMoreSection from "~/components/sections/DiscoverMoreSection.vue";
 </script>
 
 <template>

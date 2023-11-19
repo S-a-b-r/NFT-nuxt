@@ -1,15 +1,11 @@
 <script setup>
-import { defineProps } from "vue";
+import { getBg } from "~/hooks/backgroundImg.js";
 
 const props = defineProps({
     category: Object,
 });
 
-const img = useImage();
-const backgroundStyle = (bgUrl) => {
-    const imgUrl = img(`../images/categories/${bgUrl}.png`);
-    return { backgroundImage: `url('${imgUrl}')` };
-};
+const backgroundStyle = getBg(`categories/${props.category.bgUrl}.png`);
 </script>
 
 <template>
@@ -19,7 +15,7 @@ const backgroundStyle = (bgUrl) => {
     >
         <div
             class="bg-img h-[142px] w-full bg-cover bg-center lg:h-[240px]"
-            :style="backgroundStyle(props.category.bgUrl)"
+            :style="backgroundStyle"
         >
             <div class="bg_blur flex h-full w-full justify-center align-middle">
                 <NuxtImg
